@@ -1,0 +1,108 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+.ss {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+}
+.ss__selectors {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 16px 0;
+    text-align: center;
+    list-style: none;
+}
+.ss__selectors > li {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 16px 24px;
+    background: #eee;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.ss__selectors > li:hover,
+.ss__selectors > li.active {
+    background: #ccc;
+}
+.ss__label {
+    display: none;
+    width: auto;
+    padding: 16px 24px;
+    background: #eee;
+}
+.ss__slides {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.ss__slides > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    margin: 0;
+    opacity: 0;
+}
+.ss__slides > div.active {
+    opacity: 1;
+}
+.ss--mobile.ss--mobile--list .ss__slides,
+.ss--mobile.ss--mobile--toggle .ss__slides {
+    height: auto !important;
+}
+.ss--mobile.ss--mobile--list .ss__slides > div,
+.ss--mobile.ss--mobile--toggle .ss__slides > div {
+    position: relative;
+    opacity: 1;
+}
+.ss--mobile.ss--mobile--list .ss__selectors,
+.ss--mobile.ss--mobile--toggle .ss__selectors {
+    display: none;
+}
+.ss--mobile.ss--mobile--list .ss__label,
+.ss--mobile.ss--mobile--toggle .ss__label {
+    display: inline-block;
+}
+.ss--mobile.ss--mobile--toggle .ss__label {
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+.ss--mobile.ss--mobile--toggle .ss__label.active {
+    background: #ccc;
+}
+.ss--mobile.ss--mobile--toggle .ss__label:after {
+    content: "+";
+    position: relative;
+    margin-left: 6px;
+}
+.ss--mobile.ss--mobile--toggle .ss__content {
+    position: relative;
+}
+.ss--mobile.ss--mobile--toggle .ss__content__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.ss--mobile.ss--mobile--toggle .ss__slides > div .ss__content__inner {
+    opacity: 0;
+}
+.ss--mobile.ss--mobile--toggle .ss__slides > div.open .ss__label {
+    background: #ccc;
+}
+.ss--mobile.ss--mobile--toggle .ss__slides > div.open .ss__label:after {
+    content: "-";
+}
