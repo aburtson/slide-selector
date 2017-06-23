@@ -97,16 +97,16 @@ If `true` and if `mobileStyle` is set to `'toggle'`, content for all slides will
 
 slideSelector only works on the provided HTML base structure, which has the class `.ss`. If you want to target all slideSelectors on your site with the same settings, keep the function like so:
 
- ```javascript
- $('.ss').slideSelector();
- ```
+```javascript
+$('.ss').slideSelector();
+```
  
 Otherwise, you can add classes or ids to different instances of the HTML, and run another function, like so:
  
- ```javascript
- $('.your-class').slideSelector();
- $('.your-other-class').slideSelector();
- ```
+```javascript
+$('.your-class').slideSelector();
+$('.your-other-class').slideSelector();
+```
  
 You can keep these functions inside the __slide-selector.js__ file, or add it to another JS file, as long as it is included on your site after __slide-selector.js__.
 
