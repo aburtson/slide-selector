@@ -64,19 +64,19 @@ $('.ss').slideSelector({
 });
 ```
 
-#####initialSlide
+####initialSlide
 
 Sets which slide is active, `1` being the first. Default is `1`.
 
-#####speed
+####speed
 
 Sets the fade transition time (in milliseconds). Default is `300`.
 
-#####breakpoint
+####breakpoint
 
 Determines the mobile breakpoint. If screen width is less than or equal to this number (in pixels), the mobile layout will be shown. Default is `768`.
 
-#####mobileStyle
+####mobileStyle
 
 Provides alternative mobile layouts.
 
@@ -85,11 +85,11 @@ Provides alternative mobile layouts.
 
 If mobileStyle is not defined, or the above options are not selected, your slideSelector will show the desktop layout on all screen sizes.
 
-#####mobileOnly
+####mobileOnly
 
 If `true` and if `mobileStyle` is defined, the chosen mobile layout will replace the desktop layout at every screen size. Default is `false`.
 
-#####togglesOpen
+####togglesOpen
 
 If `true` and if `mobileStyle` is set to `'toggle'`, content for all slides will be visible on mobile layouts.
 
