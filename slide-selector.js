@@ -3,10 +3,10 @@ $.fn.slideSelector = function(settings) {
 };
 
 function SlideSelector(element, settings){
-    if (settings === undefined) { 
-        settings = {}; 
+    if (settings === undefined) {
+        settings = {};
     }
-    
+
     // default settings
     this.module = $(element);
     this.initialSlide = 1;
@@ -29,7 +29,7 @@ function SlideSelector(element, settings){
             break;
         case false:
             break;
-        default:
+        case true:
             this.speed = settings.speed;
             break;
     }
@@ -37,7 +37,7 @@ function SlideSelector(element, settings){
         case 0:
             this.breakpoint = 0;
             break;
-        default:
+        case true:
             this.breakpoint = settings.breakpoint;
             break;
     }
@@ -285,15 +285,15 @@ $('.ss').slideSelector();
 
 /*
 
-all settings below are set to their default values. use this as a reference.
+ all settings below are set to their default values. use this as a reference.
 
  $('.ss').slideSelector({
-     initialSlide: 1,
-     speed: 300,
-     breakpoint: 768,
-     // mobileStyle: 'toggle',
-     mobileOnly: false,
-     togglesOpen: false
+ initialSlide: 1,
+ speed: 300,
+ breakpoint: 768,
+ // mobileStyle: 'toggle',
+ mobileOnly: false,
+ togglesOpen: false
  });
 
-*/
+ */
