@@ -10,8 +10,7 @@ function SlideSelector(element, settings){
     // default settings
     this.module = $(element);
     this.initialSlide = 1;
-    this.speed = 300;
-    this.breakpoint = 768;
+
     this.mobileStyle = undefined;
     this.mobileOnly = false;
     this.togglesOpen = false;
@@ -27,9 +26,10 @@ function SlideSelector(element, settings){
         case 0:
             this.speed = 0;
             break;
-        case false:
+        case undefined:
+            this.speed = 300;
             break;
-        case true:
+        default:
             this.speed = settings.speed;
             break;
     }
@@ -37,7 +37,10 @@ function SlideSelector(element, settings){
         case 0:
             this.breakpoint = 0;
             break;
-        case true:
+        case undefined:
+            this.breakpoint = 768;
+            break;
+        default:
             this.breakpoint = settings.breakpoint;
             break;
     }
@@ -155,13 +158,16 @@ SlideSelector.prototype.changeActiveSlide = function(){
         var $selector = $(this);
         var i = $selector.index();
         var $slide = $slides.eq(i);
+        var active = $selector.hasClass('active');
 
-        $selectors.removeClass('active');
-        $slides.removeClass('active').stop().animate({'opacity': 0}, speed, function(){
-            $slides.css('display', 'none');
-            $selector.addClass('active');
-            $slide.css('display', 'block').addClass('active').stop().animate({'opacity': 1}, speed);
-        });
+        if (active == false) {
+            $selectors.removeClass('active');
+            $slides.removeClass('active').stop().animate({'opacity': 0}, speed, function(){
+                $slides.css('display', 'none');
+                $selector.addClass('active');
+                $slide.css('display', 'block').addClass('active').stop().animate({'opacity': 1}, speed);
+            });
+        }
     });
 };
 
@@ -281,7 +287,10 @@ SlideSelector.prototype.enableToggles = function(){
 // use the below function to create your slideSelector.
 // if you have a customized version of the slideSelector with its own class/id, avoid using '.ss' and target that class/id instead.
 
-$('.ss').slideSelector();
+$('.ss').slideSelector({
+    breakpoint: 1200,
+    mobileStyle: 'list'
+});
 
 /*
 

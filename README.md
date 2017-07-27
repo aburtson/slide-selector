@@ -9,7 +9,7 @@ This is a multi-purpose module that can be used whenever you desire a responsive
 1. _Dependencies:_ verify that the jQuery is included in your project.
 2. Include **slide-selector.js** in your JS directory.
 3. Include **_slide-selector.scss** or **slide-selector.css** in your stylesheets.
-4. Include the HTML inside **slide-selector.html** somewhere on your site.
+4. Include the HTML for the first `.ss` object inside **slide-selector.html**. If you want to use a version with images instead of labels, use the `.ss.ss--images` code instead, and refer to __.ss--images__ section at the bottom of this readme.
 5. Run gulp, and your slideSelector will be up and running.
 
 ##Working with HTML
@@ -170,3 +170,19 @@ Inside `.ss__slides > div`, there are the following elements:
 * `.ss__content__inner`: exists inside `.ss__content`. This contains the HTML slide content initially placed inside the parent container, `.ss_slides > div`. If `mobileStyle` is set to `'toggle'`, `.ss__content__inner` will animate opacity values to fade in/out the slide content on mobile layouts.
 
 These elements are accessible on the page at every screen size. Feel free to add your own styles, and use the mobile modifier classes explained above for more fine tuning.
+
+##.ss--images
+
+`.ss.ss--images` is a version of the SlideSelector that replaces each label with an image, which is enlarged in `:hover` and `.active` states.
+
+To get started, use the second `.ss` object in the HTML as a starter. Notice that this has the added class `ss--images`. This controls all styling for this version.
+
+You will find `img.ss__image` inside each `.ss__selectors > li` and `.ss__slides > div`. The former is visible on desktop layout, and the latter on mobile layouts.
+
+If you want an image to display normally inside `.ss__slides > div`, make sure it does not include the class `ss__image`.
+
+The `.ss__title` element inside `.ss__selectors > li` is optional.
+
+Feel free to modify the styles of `.ss--images` as you desire.
+
+
