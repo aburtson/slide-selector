@@ -1,10 +1,10 @@
-#SlideSelector
+# SlideSelector
 
 This plugin includes a module with multiple selectable slides.
 
 This is a multi-purpose module that can be used whenever you desire a responsive layout that shows one slide at a time. When clicking a selector, the current slide content will fade out before your clicked selector's corresponding content fades in.
 
-##Initial setup
+## Initial setup
 
 1. _Dependencies:_ verify that the jQuery is included in your project.
 2. Include **slide-selector.js** in your JS directory.
@@ -12,9 +12,9 @@ This is a multi-purpose module that can be used whenever you desire a responsive
 4. Include the HTML for the first `.ss` object inside **slide-selector.html**. If you want to use a version with images instead of labels, use the `.ss.ss--images` code instead, and refer to __.ss--images__ section at the bottom of this readme.
 5. Run gulp, and your slideSelector will be up and running.
 
-##Working with HTML
+## Working with HTML
 
-###Adding new slides
+### Adding new slides
 
 If you want to add another slide to your slideSelector, insert another `<li>` inside `.ss__selectors` to add a new label, as well as another `<div>` inside `.ss__slides` to add corresponding slide content, like so:
 
@@ -39,9 +39,9 @@ Make sure to insert both elements in the same spot relative to each other (ie, l
 
 Feel free to remove slides if need be. The HTML includes three slides by default, but two works fine as well.
 
-##Working with JS
+## Working with JS
 
-###The slideSelector function
+### The slideSelector function
 
 At the bottom of the __slide-selector.js__ file, you will find this function:
 
@@ -64,19 +64,19 @@ $('.ss').slideSelector({
 });
 ```
 
-####initialSlide
+#### initialSlide
 
 Sets which slide is active, `1` being the first. Default is `1`.
 
-####speed
+#### speed
 
 Sets the fade transition time (in milliseconds). Default is `300`.
 
-####breakpoint
+#### breakpoint
 
 Determines the mobile breakpoint. If screen width is less than or equal to this number (in pixels), the mobile layout will be shown. Default is `768`.
 
-####mobileStyle
+#### mobileStyle
 
 Provides alternative mobile layouts.
 
@@ -85,15 +85,15 @@ Provides alternative mobile layouts.
 
 If mobileStyle is not defined, or the above options are not selected, your slideSelector will show the desktop layout on all screen sizes.
 
-####mobileOnly
+#### mobileOnly
 
 If `true` and if `mobileStyle` is defined, the chosen mobile layout will replace the desktop layout at every screen size. Default is `false`.
 
-####togglesOpen
+#### togglesOpen
 
 If `true` and if `mobileStyle` is set to `'toggle'`, content for all slides will be visible on mobile layouts.
 
-###Creating multiple versions
+### Creating multiple versions
 
 slideSelector only works on the provided HTML base structure, which has the class `.ss`. If you want to target all slideSelectors on your site with the same settings, keep the function like so:
 
@@ -110,7 +110,7 @@ $('.your-other-class').slideSelector();
  
 You can keep these functions inside the __slide-selector.js__ file, or add it to another JS file, as long as it is included on your site after __slide-selector.js__.
 
-####Unique settings for each version
+#### Unique settings for each version
 
 You can even add different settings in each function for further customization, like so:
 
@@ -131,10 +131,10 @@ $('.your-other-class').slideSelector({
 
 __Note:__ If you do create different versions of the slideSelector, make sure to avoid including the default `$('.ss').slideSelector();` on the same HTML page as your other slideSelector versions. 
 
-##Working with CSS
+## Working with CSS
 
 
-###Mobile modifiers
+### Mobile modifiers
 There are a few important modifier classes to know about when adding your own styles:
 
 * `.ss--mobile`: added to the slideSelector when the mobile layout is visible. Check your `breakpoint` settings in your JS to know when your mobile layout will be visible.
@@ -142,7 +142,7 @@ There are a few important modifier classes to know about when adding your own st
 * `.ss--mobile--toggle`: added to the slideSelector if `mobileStyle` is set to `'toggle'`.
 * `.ss--mobile--default`: added to the slideSelector if `mobileStyle` is undefined. Out of the box, no styles are assigned to this class (so there will be no visible mobile layout changes), although `.ss--mobile` will still be added to the slideSelector based on your `breakpoint` setting, so feel free to take advantage of this.
 
-###Additional elements
+### Additional elements
 
 The JS adds additional elements to the HTML in order to provide alternative layouts for mobile. Below is an explanation of where to find these elements, and what they do.
 
@@ -171,7 +171,7 @@ Inside `.ss__slides > div`, there are the following elements:
 
 These elements are accessible on the page at every screen size. Feel free to add your own styles, and use the mobile modifier classes explained above for more fine tuning.
 
-##.ss--images
+## .ss--images
 
 `.ss.ss--images` is a version of the SlideSelector that replaces each label with an image, which is enlarged in `:hover` and `.active` states.
 
